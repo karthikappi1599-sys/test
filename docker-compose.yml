@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  genshin:
+    build: .
+    container_name: genshin-dataset-builder
+    environment:
+      HF_TOKEN: "hf_your_write_token_here"
+    volumes:
+      - .:/app
+    command: python3 temp.py
