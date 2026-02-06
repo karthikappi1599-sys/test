@@ -53,10 +53,17 @@ english = ds.filter(
 
 print(f"English filtered: {len(english):,} examples")
 
-print("Pushing Japanese dataset...")
-japanese.push_to_hub("Karthikappi0011/genshin-japanese-topfull", private=False)
+japanese.push_to_hub(
+    "Karthikappi0011/genshin-japanese-topfull",
+    private=False,
+    token=os.environ["HF_TOKEN"]
+)
 
-print("Pushing English dataset...")
-english.push_to_hub("Karthikappi0011/genshin-english-topfull", private=False)
+english.push_to_hub(
+    "Karthikappi0011/genshin-english-topfull",
+    private=False,
+    token=os.environ["HF_TOKEN"]
+)
+
 
 print("All done! Check https://huggingface.co/Karthikappi0011")
